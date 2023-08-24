@@ -1,6 +1,7 @@
 ---
 layout: default
 ---
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChKqczAd9Pz4riRN2-PhqvecPZTkMzqZk"></script>
 
 <!-- about.html -->
       <div class="post">
@@ -74,8 +75,17 @@ layout: default
           {%- endif %}
         </article>
 
-
-      
+        <script>
+          fetch('https://ipinfo.io/json?token=18ab9190e6dba1')
+          .then(response => response.json())
+          .then(data => {
+              console.log(`Visitor from: ${data.city}, ${data.region}, ${data.country}`);
+              // You can also display this information on your website or store it in your database
+          })
+          .catch(error => {
+              console.error('Error fetching IP info:', error);
+          });
+        </script>
 
 
 </div>
